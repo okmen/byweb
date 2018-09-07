@@ -8,7 +8,8 @@
   <properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<packaging.type>war</packaging.type>
-		<spring.version>3.2.11.RELEASE</spring.version>
+		<!-- <spring.version>3.2.11.RELEASE</spring.version> -->
+		<spring.version>4.1.2.RELEASE</spring.version>
 		<choumei.services.groupId>com.baiyue.services</choumei.services.groupId>
   </properties>
   <build>
@@ -18,7 +19,6 @@
 				<includes>
 					<include>consumer.xml</include>
 					<include>applicationContext.xml</include>
-					<include>applicationContext-config.xml</include>
 					<include>**/*.properties</include>
 				</includes>
 				<directory>src/main/resources</directory>
@@ -475,7 +475,11 @@
 			<artifactId>byservice-api</artifactId>
 			<version>${cn.services.version}</version>
 		</dependency>
-	     
+	     <dependency>
+			<groupId>com.thetransactioncompany</groupId>
+			<artifactId>cors-filter</artifactId>
+			<version>2.6</version>
+		</dependency>
 		
 		<!-- 腾讯云文件 -->
 		<dependency>
