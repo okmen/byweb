@@ -111,26 +111,7 @@
 				<no.access.token>1</no.access.token>
 				<!-- 0代表内网，1代表线上 -->
 				<cn.choumei.env>0</cn.choumei.env>
-				
-				<!--房源验签Key-->
-			    <house.aes.key>94D863D9BE7FB032E6A19430CC892610</house.aes.key>
-				
-				<!--腾讯云配置 -->
-				<cos.appId>1254325618</cos.appId>  
-				<cos.secretId>AKIDIwjEanNBBzxpX3FSXVHrPq57ze7O5KzR</cos.secretId>  
-				<cos.secretKey>78yc4KNDrKaigBUdcPzNYXJslT1NWXMy</cos.secretKey> 
-				<cos.bucketName>szajimgs</cos.bucketName>
-				<cos.url>http://szajimgs-1254325618.picgz.myqcloud.com</cos.url>
-				
-				<contract.callbackUrl>http://szajh5test.chudaokeji.com/signUpSuccess</contract.callbackUrl>
-				<contract.notifyUri>http://192.168.1.120:8600/contract/changeContractStatus.html</contract.notifyUri>
-				<contract.contractId>49827152</contract.contractId>
-				<contract.redirectUri>http://192.168.1.120:8600/contract/getCallBackUri.html</contract.redirectUri>
-				
-				<!--合同模板id-->
-				<contract.templateId>89811238</contract.templateId>
-				<!--万科泊寓领签平台注册信息-->
-				<contract.customerId4WK>c20229e411274e668b6e98f2cca31f08</contract.customerId4WK>
+			
 			</properties>
 		</profile>
 		<profile>
@@ -155,28 +136,6 @@
 				<!-- 0代表内网，1代表线上 -->
 				<cn.choumei.env>0</cn.choumei.env>
 				
-				<!--房源验签Key-->
-			    <house.aes.key>94D863D9BE7FB032E6A19430CC892610</house.aes.key>
-				
-				<!--腾讯云配置 -->
-				<cos.appId>1254325618</cos.appId>  
-				<cos.secretId>AKIDIwjEanNBBzxpX3FSXVHrPq57ze7O5KzR</cos.secretId>  
-				<cos.secretKey>78yc4KNDrKaigBUdcPzNYXJslT1NWXMy</cos.secretKey> 
-				<cos.bucketName>szajimgs</cos.bucketName>
-				<cos.url>http://szajimgs-1254325618.picgz.myqcloud.com</cos.url>
-				
-				<!--合同模块配置-->
-				<contract.callbackUrl>http://szajh5test.chudaokeji.com/signUpSuccess</contract.callbackUrl>
-				<contract.notifyUri>https://szajapi.shenzhenzjj.com/contract/changeContractStatus.html</contract.notifyUri>
-				<contract.contractId>89811238</contract.contractId>
-				<contract.redirectUri>https://szajapi.shenzhenzjj.com/contract/getCallBackUri.html</contract.redirectUri>
-				<contract.apiKey>a7940affaa2f4d0eb940bf3983e80040</contract.apiKey>
-				<contract.requestUrl>https://q.linksign.cn/api/template/v3/createDocument</contract.requestUrl>
-				
-				<!--合同模板id-->
-				<contract.templateId>89811238</contract.templateId>
-				<!--万科泊寓领签平台注册信息-->
-				<contract.customerId4WK>c20229e411274e668b6e98f2cca31f08</contract.customerId4WK>
 			</properties>
 		</profile>
 		<profile>
@@ -201,28 +160,6 @@
 				<!-- 0代表内网，1代表线上 -->
 				<cn.choumei.env>1</cn.choumei.env>
 				
-				<!--房源验签Key-->
-			    <house.aes.key>94D863D9BE7FB032E6A19430CC892610</house.aes.key>
-				
-				<!--腾讯云配置 -->
-				<cos.appId>1254325618</cos.appId>  
-				<cos.secretId>AKIDIwjEanNBBzxpX3FSXVHrPq57ze7O5KzR</cos.secretId>  
-				<cos.secretKey>78yc4KNDrKaigBUdcPzNYXJslT1NWXMy</cos.secretKey> 
-				<cos.bucketName>szajimgs</cos.bucketName>
-				<cos.url>http://szajimgs-1254325618.picgz.myqcloud.com</cos.url>
-				
-				<!--合同模块配置-->
-				<contract.callbackUrl>http://szajh5test.chudaokeji.com/signUpSuccess</contract.callbackUrl>
-				<contract.notifyUri>https://szajapi.shenzhenzjj.com/contract/changeContractStatus.html</contract.notifyUri>
-				<contract.contractId>89811238</contract.contractId>
-				<contract.redirectUri>https://szajapi.shenzhenzjj.com/contract/getCallBackUri.html</contract.redirectUri>
-				<contract.apiKey>a7940affaa2f4d0eb940bf3983e80040</contract.apiKey>
-				<contract.requestUrl>https://q.linksign.cn/api/template/v3/createDocument</contract.requestUrl>
-				
-				<!--合同模板id-->
-				<contract.templateId>89811238</contract.templateId>
-				<!--万科泊寓领签平台注册信息-->
-				<contract.customerId4WK>c20229e411274e668b6e98f2cca31f08</contract.customerId4WK>
 			</properties>
 		</profile>
 	</profiles>
@@ -392,12 +329,7 @@
 			<artifactId>rocketmq-client</artifactId>
 			<version>3.2.3</version>
 		</dependency>
-		<!-- choumei services -->
-		<dependency>
-			<groupId>com.utils_max</groupId>
-			<artifactId>utils-max</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
+		
 
 		
 		<dependency>
@@ -474,6 +406,18 @@
 			<groupId>${choumei.services.groupId}</groupId>
 			<artifactId>byservice-api</artifactId>
 			<version>${cn.services.version}</version>
+		</dependency>
+		<!-- common utils -->
+		<dependency>
+			<groupId>com.utils_max</groupId>
+			<artifactId>utils-max</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<!-- web base action -->
+		<dependency>
+			<groupId>com.baiyue.web</groupId>
+			<artifactId>byweb-base</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	     <dependency>
 			<groupId>com.thetransactioncompany</groupId>

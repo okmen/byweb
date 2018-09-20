@@ -16,6 +16,8 @@
 	<dubbo:annotation package="cn.web.action"/>
 	
 	<dubbo:reference id="bannerService"  interface="com.baiyue.services.IBannerService" timeout="${dubbo.consumer.account.timeout}" retries="${dubbo.consumer.retries}" />
+	<!-- cts 用户模块 -->
+	<dubbo:reference id="cts_userService"  interface="com.baiyue.services.cts.user.ICtsUserService" timeout="${dubbo.consumer.account.timeout}" retries="${dubbo.consumer.retries}" />
 
 </beans>
 	
