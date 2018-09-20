@@ -1,6 +1,8 @@
 package cn.web.action.user;
 
 
+import javax.servlet.http.HttpServletRequest;
+
 //import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 //import com.baiyue.services.IBannerService;
 import com.baiyue.services.cts.user.ICtsUserService;
+import com.baiyue.vo.result.LoginSuccessCtsUserInfo;
 import com.baiyue.web.BaseWebAction;
 import com.utils_max.JsonUtil;
 //import com.utils_max.ParseUtils;
@@ -36,7 +39,7 @@ public class LoginMgtController  extends BaseWebAction{
 	
 	@ResponseBody
 	@RequestMapping(value = "login")
-	public String download(String username,String pwd) throws Exception {
+	public String login(String username,String pwd) throws Exception {
 		ResultMsg result=null;
 		if(ctsUserService!=null){
 			 result=ctsUserService.login(username, pwd);
@@ -44,6 +47,21 @@ public class LoginMgtController  extends BaseWebAction{
 			result=new ResultMsg();
 			result.setStatus(ResultStatusEnums.error);
 			result.setMsg("LoginMgtController:ctsUserService为null!"); 
+		}
+		return  JsonUtil.objectToJsonStr(result);
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "getUserInfo")
+	public String getUser(HttpServletRequest request) throws Exception {
+		ResultMsg result=new ResultMsg();
+		LoginSuccessCtsUserInfo user= super.getLoginSuccessCtsUserInfo(request);
+		if(user!=null){
+			result.setStatus(ResultStatusEnums.success);
+			result.setData(user);
+		}else{
+			result.setStatus(ResultStatusEnums.login_expired);
+			result.setMsg("登录过期"); 
 		}
 		return  JsonUtil.objectToJsonStr(result);
 	}
