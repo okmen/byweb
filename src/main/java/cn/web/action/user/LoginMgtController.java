@@ -14,7 +14,9 @@ import com.baiyue.web.BaseWebAction;
 import com.utils_max.JsonUtil;
 //import com.utils_max.ParseUtils;
 import com.utils_max.ResultMsg;
+import com.utils_max.encrypt.MD5Encrypt;
 import com.utils_max.enums.ResultStatusEnums;
+import com.utils_max.redis.RedisUtil;
 
 /*
  * 前端用户登陆模块
